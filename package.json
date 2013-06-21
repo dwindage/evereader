@@ -33,6 +33,7 @@
 	"feedparser": "0.15.x"
   },
   "devDependencies": {
+	"chai": "~1.4.2",
     "mocha": "1.x"
   },
   "scripts": {
