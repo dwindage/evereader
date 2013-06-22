@@ -116,7 +116,31 @@ describe("How to use Evernote API", function() {
   			});
   		});
 	});
-/*
+
+	it("find tag", function(done) {
+		evernote.listTags(userInfo, function(err, tagList) {
+	   		var guid_list = [];
+			tagList.forEach(function(tag){
+  				if(tag.name=='guid'){
+  					guid_list.push(tag.guid);
+  				}
+  			});
+  			guid_list.length.should.equal(1);
+  			done();
+ 		});
+	});
+
+	it("create tag", function(done) {
+		evernote.createTag(userInfo, {'name':'tag'}, function(err, tag) {
+			should.not.exist(tag);
+			err.should.have.property("errorCode");
+			done();
+  		});
+	});
+
+	after(function(){
+	});
+
 	it("create note", function(done) {
 		evernote.createNote(userInfo, {title:'dwindage',content:'<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">\n<en-note style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;"><div>zzzzzzz</div>\n</en-note>',notebookGuid:'43bb46e6-e7a6-4074-822c-a72c1b7255bf'},function(err, note){
 				note.should.have.property('notebookGuid','43bb46e6-e7a6-4074-822c-a72c1b7255bf');
@@ -124,7 +148,7 @@ describe("How to use Evernote API", function() {
 				done();
 		});
 	});
-*/
+
 	after(function(){
 	});
 
