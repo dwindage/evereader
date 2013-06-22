@@ -31,7 +31,8 @@
     "array-indexofobject": "0.0.1",
     "resanitize": "~0.1.10",
   	"feedparser": "~0.16.x",
-    "evernode":"https://github.com/dwindage/evernode/tarball/master"
+    "evernode":"https://github.com/dwindage/evernode/tarball/master",
+    "enml-js":"https://github.com/berryboy/enml-js/tarball/master"
   },
   "devDependencies": {
     "mocha": "1.x",
