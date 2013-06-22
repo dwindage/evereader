@@ -33,10 +33,10 @@
 	"feedparser": "0.15.x"
   },
   "devDependencies": {
-	"chai": "~1.4.2",
+	"should": "~0.x.x",
     "mocha": "1.x"
   },
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "./node_modules/mocha/bin/mocha --require should"
   }
 }
