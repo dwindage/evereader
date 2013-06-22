@@ -6,11 +6,11 @@ var p = function(error_name, message) {
 	console.error(error_name + ' : ' + message);
 };
 
-var check = function(url, done, validation, pritable) {
+var check = function(url, done, validation, printable) {
 	try {
-		var req = request(error_url);
+		var req = request(url);
 		req.on('error', function(error) {
-			if(pritable) p('error', error);
+			if(printable) p('error', error);
 
 			validation.should.not.be.ok;
 			done();
@@ -18,13 +18,13 @@ var check = function(url, done, validation, pritable) {
 
 		req.pipe(new feedparser())
 			.on('error', function(error) {
-				if(pritable) p('error', error);
+				if(printable) p('error', error);
 
 				validation.should.not.be.ok;
 				done();
 			})
 			.on('meta', function(meta) {
-				if(pritable) p('meta', meta);
+				if(printable) p('meta', meta);
 
 				validation.should.be.ok;
 				done();
@@ -32,7 +32,7 @@ var check = function(url, done, validation, pritable) {
 			;
 		req.end();
 	} catch(e) {
-		if(pritable) p('exception', e);
+		if(printable) p('exception', e);
 
 		validation.should.not.be.ok;
 		done();
