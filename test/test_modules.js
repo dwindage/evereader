@@ -8,12 +8,7 @@ var evernote = new Evernote(
 );
 
 var scheduler = require('../lib/templer');
-var users = {
-  valid_token: 'S=s1:U=6bb76:E=146bcbcbd3d:C=13f650b913f:P=185:A=kjs8469-6024:V=2:H=78e08bfd670411cd73320735957392ff',
-  empty_note_token: 'S=s1:U=6e34a:E=146c4e05120:C=13f6d2f2523:P=185:A=kjs8469-7232:V=2:H=3461a44efc15250c204e439ae9454ce4',
-  empty_notebook_token: 'S=s1:U=6e83f:E=146c4e67701:C=13f6d354b04:P=185:A=kjs8469-7232:V=2:H=6754be998c51dda79b210e8a5b366561',
-  invalid_token: 'S=s1:U=:E='
-};
+var users = config;
 
 describe("test scheduler", function() {
 	before(function() {
