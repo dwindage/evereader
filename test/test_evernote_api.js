@@ -109,6 +109,7 @@ describe("How to use Evernote API", function() {
 	  				note.should.have.property("guid");
 	  				evernote.getNote(userInfo, note.guid, function(err, note) {
 	  					note.should.have.property('title','evereader-url');
+              note.should.have.property('content'); 
 					});
 	  			});
 	  			setTimeout(function(){done();},1000);
