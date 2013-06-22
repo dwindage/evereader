@@ -1,7 +1,7 @@
 var	request = require('request'),
 	feedparser = require('feedparser');
 
-var printable = true;
+var printable = false;
 var p = function(error_name, message) {
 	console.error(error_name + ' : ' + message);
 };
