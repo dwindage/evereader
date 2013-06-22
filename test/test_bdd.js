@@ -61,7 +61,7 @@ describe("How to use BDD by should.js", function() {
 		user.should.have.property("name");
 		user.should.have.property("age", 15);
 
-		user.should.not.have.property("age", 15);
+		user.should.not.have.property("age", 0);
 	});
 });
 
