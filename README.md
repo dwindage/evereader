@@ -1,4 +1,4 @@
 evereader
 =========
 
-evernote RSS reader
+evernote RSSs reader
