@@ -104,7 +104,7 @@ describe("How to use Evernote API", function() {
   				}
   			});
 
-  			evernote.findNotes(userInfo,  'evereader-url', { tagGuid : guid_list }, function(err, noteList) {
+  			evernote.findNotes(userInfo,  'evereader-url', { tagGuids : guid_list }, function(err, noteList) {
     			noteList.notes.forEach(function(note){
 	  				note.should.have.property("guid");
 	  				evernote.getNote(userInfo, note.guid, function(err, note) {
