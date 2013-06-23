@@ -78,7 +78,7 @@ describe("test scheduler", function() {
   it("insert note: valid_data", function(done) {
     var test_feed_data = {
       title: 'test1',
-      description: '<p>test1 description</p>',
+      description: '<p>test1 <img src="http://media.tumblr.com/ce46533ea563c3a953c67d4b8e3a4255/tumblr_inline_moth1237xa1qz4rgp.jpg"/>  description</p>',
       link: 'http://bwhyuk.tumblr.com/post/53578598355',
       guid: 'http://bwhyuk.tumblr.com/post/53578598355',
       author: null,
