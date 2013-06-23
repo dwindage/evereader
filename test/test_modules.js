@@ -7,15 +7,15 @@ var evernote = new Evernote(
 	config.evernoteUsedSandbox
 );
 
-var scheduler = require('../lib/templer');
+var evereader = require('../lib/evereader');
 var users = config;
 
-describe("test scheduler", function() {
+describe("test evereader", function() {
 	before(function() {
 	});
 
 	it("get url list: ", function(done) {
-    scheduler.get_url_list(users.valid_token, function(err, url_list) {
+    evereader.get_url_list(users.valid_token, function(err, url_list) {
       should.not.exist(err);
       url_list.length.should.equal(2);
       url_list.forEach(function(url) {
@@ -27,7 +27,7 @@ describe("test scheduler", function() {
     })       
 	});
 	it("get url list: no evereader note", function(done) {
-    scheduler.get_url_list(users.empty_note_token, function(err, url_list) {
+    evereader.get_url_list(users.empty_note_token, function(err, url_list) {
       should.exist(err);
       url_list.length.should.equal(0);
       url_list.forEach(function(url) {
@@ -38,7 +38,7 @@ describe("test scheduler", function() {
     })       
 	});
 	it("get url list: nothing", function(done) {
-    scheduler.get_url_list(users.empty_notebook_token, function(err, url_list) {
+    evereader.get_url_list(users.empty_notebook_token, function(err, url_list) {
       should.exist(err);
       url_list.length.should.equal(0);
       url_list.forEach(function(url) {
@@ -49,7 +49,7 @@ describe("test scheduler", function() {
     })       
 	});
 	it("get url list: invalid", function(done) {
-    scheduler.get_url_list(users.empty_notebook_token, function(err, url_list) {
+    evereader.get_url_list(users.empty_notebook_token, function(err, url_list) {
       should.exist(err);
       url_list.length.should.equal(0);
       url_list.forEach(function(url) {
@@ -61,7 +61,7 @@ describe("test scheduler", function() {
 	});
 
 	it("parse feed", function(done) {
-    scheduler.parse('http://bwhyuk.tumblr.com/rss', function(err, arr) {
+    evereader.parse('http://bwhyuk.tumblr.com/rss', function(err, arr) {
       arr.forEach(function(obj) {
         obj.should.have.property('title');
         obj.should.have.property('description');
@@ -89,7 +89,7 @@ describe("test scheduler", function() {
       }
     };
 
-    scheduler.insert(users.valid_token, test_feed_data, function(err, status) {
+    evereader.insert(users.valid_token, test_feed_data, function(err, status) {
       should.exist(status);
       should.not.exist(err);
       status.should.be.within(0, 1000);

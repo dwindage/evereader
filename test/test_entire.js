@@ -7,7 +7,7 @@ var evernote = new Evernote(
 	config.evernoteUsedSandbox
 );
 
-var scheduler = require('../lib/templer');
+var evereader = require('../lib/evereader');
 var users = config;
 
 describe("test entire", function() {
@@ -22,7 +22,7 @@ describe("test entire", function() {
 	});
 
 	it("get url list: ", function(done) {
-		scheduler.get_url_list(user_token, function(err, url_list) {
+		evereader.get_url_list(user_token, function(err, url_list) {
 			url_list.forEach(function(url) {
 				rss_feed_url_list.push(url);
 			});
@@ -35,7 +35,7 @@ describe("test entire", function() {
 
 	it("parse feed", function(done) {
 		rss_feed_url_list.forEach(function(url) {
-			scheduler.parse(url, function(err, arr) {
+			evereader.parse(url, function(err, arr) {
 				if(err) {
 					console.log('error name : ' + err.name);
 				} else if (arr) {
@@ -51,7 +51,7 @@ describe("test entire", function() {
 
 	it("insert note", function(done) {
 		rss_feed_data_list.forEach( function(feed_data) {
-			scheduler.insert(user_token, feed_data, function(err, status_code) {
+			evereader.insert(user_token, feed_data, function(err, status_code) {
 				if(err) console.log('error name : ' + err.name);
 				else {
 					console.log('insert status : ' + status_code);
