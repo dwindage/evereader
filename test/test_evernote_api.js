@@ -140,15 +140,15 @@ describe("How to use Evernote API", function() {
 
 	after(function(){
 	});
-
+/*
 	it("create note", function(done) {
-		evernote.createNote(userInfo, {title:'dwindage',content:'<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">\n<en-note style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;"><div>zzzzzzz</div>\n</en-note>',notebookGuid:'43bb46e6-e7a6-4074-822c-a72c1b7255bf'},function(err, note){
+		evernote.createNote(userInfo, {title:'dwindage',content:'<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">\n<en-note style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;"><div>zzzzzzz</div>\n</en-note>',notebookGuid:'43bb46e6-e7a6-4074-822c-a72c1b7255bf',tagNames:['guid','tag']},function(err, note){
 				note.should.have.property('notebookGuid','43bb46e6-e7a6-4074-822c-a72c1b7255bf');
 				note.should.have.property('title','dwindage');
 				done();
 		});
 	});
-
+*/
 	after(function(){
 	});
 
