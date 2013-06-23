@@ -74,6 +74,29 @@ describe("test scheduler", function() {
     });
 	  setTimeout( function(){done();}, 1000 );
 	});
+  
+  it("insert note: valid_data", function(done) {
+    var test_feed_data = {
+      title: 'test1',
+      description: '<p>test1 description</p>',
+      link: 'http://bwhyuk.tumblr.com/post/53578598355',
+      guid: 'http://bwhyuk.tumblr.com/post/53578598355',
+      author: null,
+      categories: [ 'tag1' ],
+      meta: {
+        title: 'Untitled',
+        link: 'http://bwhyuk.tumblr.com/'
+      }
+    };
+
+    scheduler.insert(users.valid_token, test_feed_data, function(err, status) {
+      should.exist(status);
+      should.not.exist(err);
+      status.should.be.within(0, 1000);
+      done();
+    });
+  });
+
 
 	after(function() {
 	});
