@@ -52,13 +52,15 @@ describe("test entire", function() {
 	it("insert note", function(done) {
 		rss_feed_data_list.forEach( function(feed_data) {
 			evereader.insert(user_token, feed_data, function(err, status_code) {
-				if(err) console.log('error name : ' + err.name);
-				else {
+				if(err) {
+                    console.log('error name : ' + err.name);
+                    console.log(err);
+                } else {
 					console.log('insert status : ' + status_code);
 				}
 			});
 		});
-		setTimeout( function(){ done(); }, 5000 );
+		setTimeout( function(){ done(); }, 9000 );
 	});
 
 	after(function() {
