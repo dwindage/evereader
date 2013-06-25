@@ -61,6 +61,12 @@ test-simplequeue:
 		--timeout $(TIMEOUT) \
 		test/test_simplequeue.js
 
+test-worker:
+	@./node_modules/.bin/mocha \
+		--require should \
+		--reporter $(REPORTER) \
+		--timeout $(TIMEOUT) \
+		test/test_queue_based_worker.js
 
 .PHONY: test test-w test-my
 

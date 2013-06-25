@@ -37,7 +37,8 @@
   },
   "devDependencies": {
     "mocha": "1.x",
-	"should": "~0.6"
+	"should": "~0.6",
+    "sleep": "~1.1.0"
   },
   "scripts": {
     "test": "make test"
