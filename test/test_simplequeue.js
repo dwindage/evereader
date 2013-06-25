@@ -49,7 +49,7 @@ describe("test simplequeue", function() {
                     clearInterval(intervalId);
                     done();
                } else { // working...
-                   Math.floor((Math.random()*100)+1);
+                   msg.should.be.within(0, 100);
                }
 
                 beforeMsg = msg 
@@ -58,8 +58,7 @@ describe("test simplequeue", function() {
         }, WORKER_INTERVAL);
 
         // producer
-        for(var i=0; i<100; i++)
-        {
+        for(var i=0; i<100; i++) {
             var msg = Math.floor((Math.random()*100));
             queue.putMessage(msg);
         }
