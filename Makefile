@@ -2,7 +2,7 @@
 REPORTER = spec
 TIMEOUT = 10s
 
-test: test-entire test-modules test-evernote-api test-feedparser-check-uri test-feedparser-validate-data
+test: test-entire test-modules test-evernote-api test-feedparser-check-uri test-feedparser-validate-data test-simplequeue
 
 test-w:
 	@./node_modules/.bin/mocha \
@@ -46,6 +46,14 @@ test-feedparser-validate-data:
 		--reporter $(REPORTER) \
 		--timeout $(TIMEOUT) \
 		test/test_feedparser-validate-data.js
+
+test-simplequeue:
+	@./node_modules/.bin/mocha \
+		--require should \
+		--reporter $(REPORTER) \
+		--timeout $(TIMEOUT) \
+		test/test_simplequeue.js
+
 
 .PHONY: test test-w test-my
 

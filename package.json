@@ -31,6 +31,7 @@
     "array-indexofobject": "0.0.1",
     "resanitize": "~0.1.10",
   	"feedparser": "~0.16.x",
+    "simplequeue":"~0.0.2",
     "evernode":"https://github.com/dwindage/evernode/tarball/master",
     "enml-js":"https://github.com/berryboy/enml-js/tarball/master"
   },
