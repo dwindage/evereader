@@ -68,5 +68,13 @@ test-worker:
 		--timeout $(TIMEOUT) \
 		test/test_queue_based_worker.js
 
+test-working-model:
+	@./node_modules/.bin/mocha \
+		--require should \
+		--reporter $(REPORTER) \
+		--timeout $(TIMEOUT) \
+		test/test_working_model.js
+
+
 .PHONY: test test-w test-my
 

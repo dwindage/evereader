@@ -20,7 +20,7 @@
   "bugs": {
     "url": ""
   },
-  "main": "./main.js",
+  "main": "./lib/",
   "engines": {
     "node": ">= 0.8.0"
   },
