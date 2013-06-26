@@ -31,9 +31,10 @@
     "array-indexofobject": "0.0.1",
     "resanitize": "~0.1.10",
   	"feedparser": "~0.16.x",
-    "simplequeue":"~0.0.2",
+    "sqlite3":"latest",
     "evernode":"https://github.com/dwindage/evernode/tarball/master",
-    "enml-js":"https://github.com/berryboy/enml-js/tarball/master"
+    "enml-js":"https://github.com/berryboy/enml-js/tarball/master",
+    "simplequeue": "https://github.com/dwindage/SimpleQueue/tarball/master"
   },
   "devDependencies": {
     "mocha": "1.x",
