@@ -53,7 +53,7 @@ describe("test queue based worker", function() {
             inputQueue.messages.length.should.equal(0);
             outputQueue.messages.length.should.equal(10);
             done();
-        }, 500);
+        }, 1500);
 	});
 	
     it("test worker timeout (n=1)", function(done) {
@@ -80,7 +80,7 @@ describe("test queue based worker", function() {
 
             outputQueue.messages.length.should.be.within(1, 3);
             done();
-        }, 100);
+        }, 1000);
 	});
 	
     it("test worker timeout (n=10)", function(done) {
@@ -107,11 +107,11 @@ describe("test queue based worker", function() {
 
             outputQueue.messages.length.should.be.within(9, 10);
             done();
-        }, 200);
+        }, 1000);
 	});
     
-    it("test worker pipeline (n=2)", function(done) {
-        var n = 2;
+    it("test worker pipeline (n=10)", function(done) {
+        var n = 10;
         var item_count = 30;
 
         var queue1 = simplequeue.createQueue();

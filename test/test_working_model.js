@@ -20,7 +20,7 @@ describe("test working model", function() {
 
         message.user_token = config.valid_token;
         var queue = simplequeue.createQueue();
-        model.get_url_list(message, queue);
+        model.get_rss_feed_url(message, queue);
 
         setTimeout(function() {
             queue.length().should.equal(1);
@@ -29,26 +29,28 @@ describe("test working model", function() {
             message.should.be.an.instanceof(model.job_message);
 
             done();
-        }, 1000);
+        }, 5000);
     });
 
     it("test get feed data", function(done) {
         var message = new model.job_message();
 
         message.user_token = config.valid_token;
-        message.url_list.push('http://bwhyuk.tumblr.com/rss');
+        message.rss_url_list.push('http://bwhyuk.tumblr.com/rss');
         var queue = simplequeue.createQueue();
 
         model.get_rss_feed_data(message, queue);
 
         setTimeout(function() {
-            queue.length().should.equal(1);
+            queue.length().should.equal(3);
 
-            var message = queue.getMessageSync();
-            message.should.be.an.instanceof(model.job_message);
+            while(message = queue.getMessageSync()) {
+                message.should.be.an.instanceof(model.job_message);
+                message.article_list.length.should.equal(1);
+            }
 
             done();
-        }, 1000);
+        }, 3000);
     });
 	
 	after(function() {
