@@ -76,5 +76,5 @@ test-working-model:
 		test/test_working_model.js
 
 
-.PHONY: test test-w test-my
+.PHONY: test
 
