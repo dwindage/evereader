@@ -52,7 +52,20 @@ describe("test working model", function() {
             done();
         }, 3000);
     });
+
+    it("test sink hole", function(done) {
+        var message = new model.job_message();
 	
+        var queue = simplequeue.createQueue();
+
+        model.sink_hole(message, queue);
+
+        setTimeout(function() {
+            queue.length().should.equal(0);
+            done();
+        }, 1000);
+    });
+
 	after(function() {
 	});
 });

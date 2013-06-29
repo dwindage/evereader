@@ -75,6 +75,14 @@ test-working-model:
 		--timeout $(TIMEOUT) \
 		test/test_working_model.js
 
+test-manager:
+	@./node_modules/.bin/mocha \
+		--require should \
+		--reporter $(REPORTER) \
+		--timeout $(TIMEOUT) \
+		test/test_manager.js
+
+
 
 .PHONY: test test-w test-my
 
