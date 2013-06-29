@@ -2,7 +2,7 @@
 REPORTER = spec
 TIMEOUT = 10s
 
-test: test-entire test-modules test-evernote-api test-feedparser-check-uri test-feedparser-validate-data test-simplequeue test-worker test-working-model test-sqlite
+test: test-entire test-modules test-evernote-api test-feedparser-check-uri test-feedparser-validate-data test-simplequeue test-worker test-working-model test-manager test-sqlite
 
 test-w:
 	@./node_modules/.bin/mocha \
