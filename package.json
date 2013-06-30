@@ -32,6 +32,7 @@
     "resanitize": "~0.1.10",
   	"feedparser": "~0.16.x",
     "sqlite3":"latest",
+    "node-schedule":"latest",
     "evernode":"https://github.com/dwindage/evernode/tarball/master",
     "enml-js":"https://github.com/berryboy/enml-js/tarball/master",
     "simplequeue": "https://github.com/dwindage/SimpleQueue/tarball/master"

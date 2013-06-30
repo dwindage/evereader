@@ -2,29 +2,29 @@ var should = require('should');
 
 global.config = require('../config');
 
-var manager = require('../lib/manager');
+var manager_lib = require('../lib/manager');
 
 function sum(oprd1, oprd2) {
     return oprd1 + oprd2;
 }
 
-describe("test manager", function() {
+describe("test manager_lib", function() {
 
 	before(function() {
 	});
 
-	it("test manager monitoring", function(done) {
-        var scheduler = new manager();
+	it("test manager_lib monitoring", function(done) {
+        var scheduler = new manager_lib();
 
-        scheduler.should.be.an.instanceof(manager);
+        scheduler.should.be.an.instanceof(manager_lib);
         scheduler.get_number_of_queues().reduce(sum).should.equal(0);
         scheduler.get_number_of_workers().reduce(sum).should.equal(0);
 
         done();
 	});
 
-    it("test manager operation", function(done) {
-        var scheduler = new manager();
+    it("test manager_lib operation", function(done) {
+        var scheduler = new manager_lib();
 
         scheduler.get_number_of_workers().reduce(sum).should.equal(0);
 
@@ -89,7 +89,7 @@ describe("test manager", function() {
     });
 
     it("entire test", function(done) {
-        var scheduler = new manager();
+        var scheduler = new manager_lib();
 
         scheduler.add_worker();
         scheduler.get_number_of_workers().reduce(sum).should.equal(4);
