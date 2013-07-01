@@ -89,5 +89,5 @@ test-schedule:
 		--timeout $(TIMEOUT) \
 		test/test_schedule.js
 
-.PHONY: test test-w test-my
+.PHONY: test
 
