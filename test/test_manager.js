@@ -1,8 +1,10 @@
 var should = require('should');
 
 global.config = require('../config');
+global.db_config = require('../db_config.js');
 
-var manager_lib = require('../lib/manager');
+var manager_lib = require('../lib/manager')
+  , userDao = require('../lib/userDao.js');
 
 function sum(oprd1, oprd2) {
     return oprd1 + oprd2;
@@ -11,6 +13,7 @@ function sum(oprd1, oprd2) {
 describe("test manager_lib", function() {
 
 	before(function() {
+        userDao.initDB(db_config.dbPath,db_config.db, db_config.userTablename);
 	});
 
 	it("test manager_lib monitoring", function(done) {
@@ -22,6 +25,14 @@ describe("test manager_lib", function() {
 
         done();
 	});
+
+
+    it("test update user token", function(done) {
+        userDao.readAllUsers(function(err,rows){
+            rows.length.should.above(0);
+            done();
+        });
+    });
 
     it("test manager_lib operation", function(done) {
         var scheduler = new manager_lib();
