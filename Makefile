@@ -2,7 +2,7 @@
 REPORTER = spec
 TIMEOUT = 10s
 
-test: test-entire test-modules test-evernote-api test-feedparser-check-uri test-feedparser-validate-data test-simplequeue test-worker test-working-model test-manager test-sqlite
+test: test-entire test-modules test-evernote-api test-feedparser-check-uri test-feedparser-validate-data test-simplequeue test-worker test-working-model test-manager test-schedule test-sqlite
 
 test-w:
 	@./node_modules/.bin/mocha \
@@ -82,7 +82,12 @@ test-manager:
 		--timeout $(TIMEOUT) \
 		test/test_manager.js
 
-
+test-schedule:
+	@./node_modules/.bin/mocha \
+		--require should \
+		--reporter $(REPORTER) \
+		--timeout $(TIMEOUT) \
+		test/test_schedule.js
 
 .PHONY: test test-w test-my
 
